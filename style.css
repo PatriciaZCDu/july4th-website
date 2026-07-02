@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Georgia", "Times New Roman", serif;
+  background: linear-gradient(160deg, #0a1b4a 0%, #10306e 45%, #b22234 100%);
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- Center content ---------- */
+.content {
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  z-index: 5;
+}
+
+.stars {
+  font-size: 1.6rem;
+  letter-spacing: 0.6rem;
+  color: #ffd94a;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1.05;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+h1 span {
+  color: #ffd94a;
+}
+
+.content p {
+  margin-top: 1.4rem;
+  font-size: clamp(1rem, 2.4vw, 1.5rem);
+  opacity: 0.92;
+}
+
+/* ---------- Balloons ---------- */
+.balloons {
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 1.5rem;
+  z-index: 2;
+}
+
+.balloons-left {
+  left: 2vw;
+  align-items: flex-start;
+}
+
+.balloons-right {
+  right: 2vw;
+  align-items: flex-end;
+}
+
+.balloon {
+  position: relative;
+  width: 70px;
+  height: 90px;
+  border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
+  box-shadow: inset -8px -8px 18px rgba(0, 0, 0, 0.25);
+  transform-origin: top center;
+  animation: sway 4s ease-in-out infinite;
+}
+
+/* little knot at the bottom of the balloon */
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid currentColor;
+}
+
+/* hanging string */
+.balloon .string {
+  position: absolute;
+  top: 98px;
+  left: 50%;
+  width: 2px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.55);
+  transform: translateX(-50%);
+}
+
+.balloon.red {
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #b22234 70%);
+  color: #b22234;
+}
+.balloon.white {
+  background: radial-gradient(circle at 30% 30%, #ffffff, #d9dde8 70%);
+  color: #d9dde8;
+}
+.balloon.blue {
+  background: radial-gradient(circle at 30% 30%, #5a7bd8, #1e3a8a 70%);
+  color: #1e3a8a;
+}
+
+/* stagger the sway so they don't move in unison */
+.balloons .balloon:nth-child(1) { animation-delay: 0s; }
+.balloons .balloon:nth-child(2) { animation-delay: 0.6s; }
+.balloons .balloon:nth-child(3) { animation-delay: 1.2s; }
+.balloons .balloon:nth-child(4) { animation-delay: 1.8s; }
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50%      { transform: rotate(5deg); }
+}
+
+/* Hide balloons on very small screens so text stays readable */
+@media (max-width: 640px) {
+  .balloon { width: 48px; height: 62px; }
+  .balloon .string { top: 68px; height: 80px; }
+  .balloons { gap: 1.5rem; }
+}
