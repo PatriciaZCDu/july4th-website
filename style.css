@@ -46,6 +46,13 @@ h1 span {
   opacity: 0.92;
 }
 
+.content .signoff {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #ffd94a;
+  opacity: 1;
+}
+
 /* ---------- Balloons ---------- */
 .balloons {
   position: fixed;
