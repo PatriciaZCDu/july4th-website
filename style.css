@@ -68,51 +68,35 @@ body {
 /* the flag, hoisted at the top and flying to the right */
 .flag {
   position: absolute;
-  top: 5px;
+  top: 4px;
   left: 5px;
-  width: clamp(80px, 14vw, 128px);
+  width: clamp(84px, 15vw, 134px);
   aspect-ratio: 19 / 10;
-  border-radius: 2px 4px 4px 2px;
-  overflow: hidden;
   transform-origin: left center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  animation: fly 3.5s ease-in-out infinite;
+  animation: fly 4s ease-in-out infinite;
+  will-change: transform;
 }
 
-/* 13 alternating red/white stripes */
-.flag-stripes {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    #b22234 0,
-    #b22234 7.6923%,
-    #ffffff 7.6923%,
-    #ffffff 15.3846%
-  );
+/* the SVG cloth handles the rippling; let its shadow/ripple overflow */
+.flag-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
-/* blue canton with a star-field of white dots */
-.flag-canton {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40%;
-  height: 53.846%; /* covers the top 7 stripes */
-  background-color: #3c3b6e;
-  background-image:
-    radial-gradient(circle, #fff 22%, transparent 24%),
-    radial-gradient(circle, #fff 22%, transparent 24%);
-  background-size: 20% 25%, 20% 25%;
-  background-position: 0 0, 10% 12.5%;
-}
-
-/* flag flying / rippling in the wind, anchored at the pole */
+/* gentle overall sway/lift of the whole cloth; the SVG filter adds the ripple */
 @keyframes fly {
-  0%, 100% { transform: perspective(600px) rotateY(0deg)   skewY(-1.2deg); }
-  25%      { transform: perspective(600px) rotateY(-12deg) skewY(1.4deg); }
-  50%      { transform: perspective(600px) rotateY(0deg)   skewY(1.2deg); }
-  75%      { transform: perspective(600px) rotateY(12deg)  skewY(-1.4deg); }
+  0%, 100% { transform: perspective(700px) rotateY(0deg)  skewY(-1deg)  translateY(0); }
+  25%      { transform: perspective(700px) rotateY(-6deg) skewY(0.8deg) translateY(-1.5px); }
+  50%      { transform: perspective(700px) rotateY(0deg)  skewY(1deg)   translateY(0); }
+  75%      { transform: perspective(700px) rotateY(6deg)  skewY(-0.8deg) translateY(-1.5px); }
+}
+
+/* respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .flag { animation: none; }
+  #wind animate { display: none; }
 }
 
 h1 {

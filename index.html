@@ -25,7 +25,104 @@
 
   <main class="content">
     <div class="stars">✦ ✦ ✦</div>
-    <h1>Happy July 4th<span class="flagpole" role="img" aria-label="American flag flying high on a flagpole"><span class="finial"></span><span class="pole"></span><span class="flag"><span class="flag-stripes"></span><span class="flag-canton"></span></span></span><br /><span class="line2">Everyone</span></h1>
+    <h1>Happy July 4th<span class="flagpole" role="img" aria-label="American flag flying high on a flagpole"><span class="finial"></span><span class="pole"></span><span class="flag"><svg class="flag-svg" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs>
+      <clipPath id="flagClip"><rect x="0" y="0" width="380" height="200" rx="7"/></clipPath>
+      <linearGradient id="folds" x1="0" y1="0" x2="1" y2="0.08">
+        <stop offset="0.000" stop-color="#000" stop-opacity="0.16"/>
+        <stop offset="0.143" stop-color="#fff" stop-opacity="0.14"/>
+        <stop offset="0.286" stop-color="#000" stop-opacity="0.16"/>
+        <stop offset="0.429" stop-color="#fff" stop-opacity="0.14"/>
+        <stop offset="0.571" stop-color="#000" stop-opacity="0.16"/>
+        <stop offset="0.714" stop-color="#fff" stop-opacity="0.14"/>
+        <stop offset="0.857" stop-color="#000" stop-opacity="0.16"/>
+        <stop offset="1.000" stop-color="#fff" stop-opacity="0.14"/>
+      </linearGradient>
+      <linearGradient id="sheen" x1="0" y1="0" x2="0.5" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity="0.28"/>
+        <stop offset="0.4" stop-color="#fff" stop-opacity="0.05"/>
+        <stop offset="1" stop-color="#000" stop-opacity="0.10"/>
+      </linearGradient>
+      <filter id="wind" x="-25%" y="-25%" width="150%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.012 0.026" numOctaves="2" seed="6" result="noise">
+          <animate attributeName="baseFrequency" dur="7s" values="0.012 0.024;0.017 0.032;0.012 0.024" repeatCount="indefinite"/>
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G" result="disp"/>
+        <feDropShadow dx="1" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.45"/>
+      </filter>
+      <polygon id="star" points="0.00,-4.60 1.05,-1.44 4.37,-1.42 1.69,0.55 2.70,3.72 0.00,1.78 -2.70,3.72 -1.69,0.55 -4.37,-1.42 -1.05,-1.44" fill="#ffffff"/>
+    </defs>
+    <g filter="url(#wind)">
+      <g clip-path="url(#flagClip)">
+      <rect x="0" y="0.000" width="380" height="15.3846" fill="#b22234"/>
+      <rect x="0" y="15.385" width="380" height="15.3846" fill="#ffffff"/>
+      <rect x="0" y="30.769" width="380" height="15.3846" fill="#b22234"/>
+      <rect x="0" y="46.154" width="380" height="15.3846" fill="#ffffff"/>
+      <rect x="0" y="61.538" width="380" height="15.3846" fill="#b22234"/>
+      <rect x="0" y="76.923" width="380" height="15.3846" fill="#ffffff"/>
+      <rect x="0" y="92.308" width="380" height="15.3846" fill="#b22234"/>
+      <rect x="0" y="107.692" width="380" height="15.3846" fill="#ffffff"/>
+      <rect x="0" y="123.077" width="380" height="15.3846" fill="#b22234"/>
+      <rect x="0" y="138.462" width="380" height="15.3846" fill="#ffffff"/>
+      <rect x="0" y="153.846" width="380" height="15.3846" fill="#b22234"/>
+      <rect x="0" y="169.231" width="380" height="15.3846" fill="#ffffff"/>
+      <rect x="0" y="184.615" width="380" height="15.3846" fill="#b22234"/>
+      <rect x="0" y="0" width="152.000" height="107.692" fill="#3c3b6e"/>
+      <use href="#star" x="12.67" y="10.77"/>
+      <use href="#star" x="38.00" y="10.77"/>
+      <use href="#star" x="63.33" y="10.77"/>
+      <use href="#star" x="88.67" y="10.77"/>
+      <use href="#star" x="114.00" y="10.77"/>
+      <use href="#star" x="139.33" y="10.77"/>
+      <use href="#star" x="25.33" y="21.54"/>
+      <use href="#star" x="50.67" y="21.54"/>
+      <use href="#star" x="76.00" y="21.54"/>
+      <use href="#star" x="101.33" y="21.54"/>
+      <use href="#star" x="126.67" y="21.54"/>
+      <use href="#star" x="12.67" y="32.31"/>
+      <use href="#star" x="38.00" y="32.31"/>
+      <use href="#star" x="63.33" y="32.31"/>
+      <use href="#star" x="88.67" y="32.31"/>
+      <use href="#star" x="114.00" y="32.31"/>
+      <use href="#star" x="139.33" y="32.31"/>
+      <use href="#star" x="25.33" y="43.08"/>
+      <use href="#star" x="50.67" y="43.08"/>
+      <use href="#star" x="76.00" y="43.08"/>
+      <use href="#star" x="101.33" y="43.08"/>
+      <use href="#star" x="126.67" y="43.08"/>
+      <use href="#star" x="12.67" y="53.85"/>
+      <use href="#star" x="38.00" y="53.85"/>
+      <use href="#star" x="63.33" y="53.85"/>
+      <use href="#star" x="88.67" y="53.85"/>
+      <use href="#star" x="114.00" y="53.85"/>
+      <use href="#star" x="139.33" y="53.85"/>
+      <use href="#star" x="25.33" y="64.62"/>
+      <use href="#star" x="50.67" y="64.62"/>
+      <use href="#star" x="76.00" y="64.62"/>
+      <use href="#star" x="101.33" y="64.62"/>
+      <use href="#star" x="126.67" y="64.62"/>
+      <use href="#star" x="12.67" y="75.38"/>
+      <use href="#star" x="38.00" y="75.38"/>
+      <use href="#star" x="63.33" y="75.38"/>
+      <use href="#star" x="88.67" y="75.38"/>
+      <use href="#star" x="114.00" y="75.38"/>
+      <use href="#star" x="139.33" y="75.38"/>
+      <use href="#star" x="25.33" y="86.15"/>
+      <use href="#star" x="50.67" y="86.15"/>
+      <use href="#star" x="76.00" y="86.15"/>
+      <use href="#star" x="101.33" y="86.15"/>
+      <use href="#star" x="126.67" y="86.15"/>
+      <use href="#star" x="12.67" y="96.92"/>
+      <use href="#star" x="38.00" y="96.92"/>
+      <use href="#star" x="63.33" y="96.92"/>
+      <use href="#star" x="88.67" y="96.92"/>
+      <use href="#star" x="114.00" y="96.92"/>
+      <use href="#star" x="139.33" y="96.92"/>
+      <rect x="0" y="0" width="380" height="200" fill="url(#folds)"/>
+      <rect x="0" y="0" width="380" height="200" fill="url(#sheen)"/>
+      </g>
+    </g>
+  </svg></span></span><br /><span class="line2">Everyone</span></h1>
     <p>Wishing you a bright &amp; sparkling Independence Day!</p>
     <p class="signoff">— Pat</p>
   </main>
