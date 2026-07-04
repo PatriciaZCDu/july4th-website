@@ -30,6 +30,51 @@ body {
   margin-bottom: 1rem;
 }
 
+/* ---------- American flag ---------- */
+.flag {
+  position: relative;
+  width: clamp(160px, 32vw, 260px);
+  aspect-ratio: 19 / 10;
+  margin: 0 auto 1.6rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  animation: wave 5s ease-in-out infinite;
+}
+
+/* 13 alternating red/white stripes */
+.flag-stripes {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    #b22234 0,
+    #b22234 7.6923%,
+    #ffffff 7.6923%,
+    #ffffff 15.3846%
+  );
+}
+
+/* blue canton with a star-field of white dots */
+.flag-canton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 53.846%; /* covers the top 7 stripes */
+  background-color: #3c3b6e;
+  background-image:
+    radial-gradient(circle, #fff 22%, transparent 24%),
+    radial-gradient(circle, #fff 22%, transparent 24%);
+  background-size: 20% 25%, 20% 25%;
+  background-position: 0 0, 10% 12.5%;
+}
+
+@keyframes wave {
+  0%, 100% { transform: skewY(-1.2deg) rotate(-0.6deg); }
+  50%      { transform: skewY(1.2deg) rotate(0.6deg); }
+}
+
 h1 {
   font-size: clamp(2.5rem, 8vw, 6rem);
   line-height: 1.05;
